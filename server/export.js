@@ -61,7 +61,7 @@ module.exports = function(app, settings) {
                         } else if (job.get('status') === 'processing' && !job.worker) {
                             job.save({
                                 status: 'error',
-                                error: 'Export did not complete' // @TODO
+                                errormsg: 'Export did not complete' // @TODO
                             }, { success: next, error: next });
                         // Job is complete or already processing.
                         } else {

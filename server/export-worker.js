@@ -159,7 +159,7 @@ FormatImage.prototype.render = function(callback) {
                 var next = this;
                 that.model.save({
                     status: 'error',
-                    error: 'Tile invalid: ' + err.message,
+                    errormsg: 'Tile invalid: ' + err.message,
                     updated: +new Date
                 }, {
                     success: function() { next(err); },
@@ -173,7 +173,7 @@ FormatImage.prototype.render = function(callback) {
                     if (err) {
                         that.model.save({
                             status: 'error',
-                            error: 'Error saving image: ' + err.message,
+                            errormsg: 'Error saving image: ' + err.message,
                             updated: +new Date
                         }, { success: callback, error: callback});
                     }
@@ -189,7 +189,7 @@ FormatImage.prototype.render = function(callback) {
             else {
                 that.model.save({
                     status: 'error',
-                    error: 'Error rendering image: ' + err.message,
+                    errormsg: 'Error rendering image: ' + err.message,
                     updated: +new Date
                 }, { success: callback, error: callback});
             }

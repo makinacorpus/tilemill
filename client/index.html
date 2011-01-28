@@ -425,9 +425,9 @@
       {{/download}}
       <a class='filename'>{{ filename }}</a>
       <span class='time'>{{ time }}</span>
-      {{#error}}
-        <div class='message'>{{ error }}</div>
-      {{/error}}
+      {{#errormsg}}
+        <div class='message'>{{ errormsg }}</div>
+      {{/errormsg}}
       {{#download}}
         <div class='download'><a href='{{ download }}'>Download</a></div>
       {{/download}}

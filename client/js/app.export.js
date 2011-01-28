@@ -60,7 +60,7 @@ var ExportRowView = Backbone.View.extend({
             progressClass: parseInt(this.model.get('progress') * 10),
             filename: this.model.get('filename'),
             status: this.model.get('status'),
-            error: this.model.get('error'),
+            errormsg: this.model.get('errormsg'),
             type: this.model.get('type'),
             download: this.model.downloadURL()
         }));
