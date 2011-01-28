@@ -121,7 +121,11 @@ function destroy(model, callback) {
  */
 function save(model, callback) {
     load(model, function(err, oldModel) {
-        db.save(model.type + '-' + model.id, _.extend({type: model.type}, model.attributes, {_rev: oldModel._rev}), function(err, data) {
+        var doc = _.extend({type: model.type}, model.attributes);
+        if (oldModel) {
+            doc = _.extend(doc, {_rev: oldModel._rev});
+        }
+        db.save(model.type + '-' + model.id, doc, function(err, data) {
             callback(err, model);
         });
     });
